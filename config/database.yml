@@ -15,15 +15,9 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: d478lppmqcriud
   pool: 5
-  username: gqqmrewsukagtp
-  password:
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: d478lppmqcriud
   pool: 5
-  username: gqqmrewsukagtp
-  password:
