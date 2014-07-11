@@ -7,7 +7,7 @@ gem 'rails', '3.2.19'
 
 # Use postgresql as the database for Active Record
 group :production, :test do
-  gem 'pg', '~> 0.17.1'
+  gem 'pg'
 end
 
 group :development do
