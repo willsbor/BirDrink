@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20140712074738) do
     t.datetime "end_date"
     t.boolean  "active_game"
     t.integer  "drink_id"
+    t.string   "password"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

@@ -4,7 +4,11 @@
 	現在使用者是:  
 	<%= @user.name %>
 	<% end %>
+
+	<%= link_to '登出/換人/換角色/換分身', :controller => 'users', :action => 'logout_new' %>
 </p>
+
+<p> <%= link_to '英雄榜', :controller => 'games', :action => 'index' %>  </p>
 
 <h1>猜猜下次賣完的飲料是哪罐</h1>
 
