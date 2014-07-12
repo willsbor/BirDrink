@@ -1,7 +1,35 @@
+
+<p>
+	<% if @user %>
+	現在使用者是:  
+	<%= @user.name %>
+	<% end %>
+</p>
+
+<h1>猜猜下次賣完的飲料是哪罐</h1>
+
+<%= form_for @user, :url => { :controller => 'users', :action => 'choise' } do |f| %>
+
 <ul>
 <% @drinks.each do |drink| %>
   <li>
-  <%= event.name %>
+  	<% if drink.empty %>
+  		[<%= drink.name %>]已經陣亡 .....<br>
+
+  	<% else %>
+	  	<%= f.radio_button :drink_id, drink.id %> <%= f.label :name, drink.name %> <br>
+	  	誰下注：
+	  	<% drink.users.each do |bit_user| %>
+	  		<%= bit_user.name + ", " %>
+	  	<% end %>
+	  	<br>
+  	<% end %>
+
+  	<br><br><br>
   </li>
 <% end %>
 </ul>
+
+<%= f.submit "下注" %>
+<% end %>
+

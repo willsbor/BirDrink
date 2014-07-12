@@ -11,10 +11,41 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140711094723) do
+ActiveRecord::Schema.define(:version => 20140712074738) do
 
   create_table "drinks", :force => true do |t|
     t.string   "name"
+    t.boolean  "empty"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "games", :force => true do |t|
+    t.datetime "create_date"
+    t.datetime "end_date"
+    t.boolean  "active_game"
+    t.integer  "drink_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "user_game_joinships", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "game_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "user_game_winnerships", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "game_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.integer  "drink_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

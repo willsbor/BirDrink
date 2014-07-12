@@ -3,13 +3,13 @@ BidDrink::Application.routes.draw do
 
   #get "signup/index"
 
-  get '/signup'=>'signup#index'
-  get '/signup/index'=>'signup#index'
-  get '/auth/:provider/callback'=>'signup#create'
+  # get '/signup'=>'signup#index'
+  # get '/signup/index'=>'signup#index'
+  # get '/auth/:provider/callback'=>'signup#create'
 
-  get '/login'=>'login#index'
-  get '/login/index'=>'login#index'
-  get '/login/logout'=>'login#logout'
+  # get '/login'=>'login#index'
+  # get '/login/index'=>'login#index'
+  # get '/login/logout'=>'login#logout'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -6,13 +6,7 @@ gem 'rails', '3.2.19'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # Use postgresql as the database for Active Record
-group :production, :test do
-  gem 'pg'
-end
-
-group :development do
-  gem 'sqlite3'
-end
+gem 'sqlite3'
 
 
 # Gems used only for assets and not required
@@ -51,5 +45,5 @@ gem 'thin'
 # gem 'debugger'
 
 # heroku 要的
-gem 'rails_12factor', group: :production
+# gem 'rails_12factor', group: :production
 
