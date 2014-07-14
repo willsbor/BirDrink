@@ -21,6 +21,7 @@ class GamesController < ApplicationController
 
 	def index
 		@games = Game.all
+		@users = User.all
 	end
 
 	def end_one_game
