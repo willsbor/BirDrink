@@ -1,0 +1,29 @@
+
+<h1>已經有結果了 結束的是.....</h1>
+<p>
+此局開啟時間：<%= @game.create_date.strftime("%Y/%m/%d %H:%M:%S") %>
+</p>
+
+<p>
+<%= form_for @game, :url => { :controller => 'games', :action => 'close_this_game' } do |f| %>
+
+<%= f.label :password, "密碼" %>
+<%= f.text_field :password, :value => "" %>
+
+<ul>
+<% @drinks.each do |drink| %>
+  <li>
+  	<% if drink.empty %>
+  		[<%= drink.name %>]已經陣亡 .....<br>
+  	<% else %>
+  		<%= f.radio_button :drink_id, drink.id %> <%= f.label :name, drink.name %> <br>
+  	<% end %>
+  	<br><br><br>
+  </li>
+<% end %>
+</ul>
+
+<%= f.submit "收攤！" %>
+<% end %>
+
+</p>

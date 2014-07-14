@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  create_date: 2014-07-11
+  end_date: 2014-07-11
+
+two:
+  create_date: 2014-07-11
+  end_date: 2014-07-11

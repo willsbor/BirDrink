@@ -1,0 +1,8 @@
+<h1>新開一個使用者</h1>
+
+<%= form_for @user, :url => { :controller => 'users', :action => 'create' } do |f| %>
+    <%= f.label :name, "你的名字" %>
+    <%= f.text_field :name %>
+
+    <%= f.submit "Create/login" %>
+<% end %>

@@ -1,0 +1,11 @@
+<h1> 遊戲尚未開張 </h1>
+<p> 要不要開一個 </p>
+<%= form_for @game, :url => { :controller => 'games', :action => 'create' } do |f| %>
+    <% #f.label :name, "dummy" %>
+    <%= f.hidden_field :create_date %>
+
+    <%= f.label :password, "密碼" %>
+	<%= f.text_field :password %>
+
+    <%= f.submit "Create" %>
+<% end %>

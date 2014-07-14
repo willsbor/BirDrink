@@ -1,0 +1,29 @@
+
+<h1>英雄榜</h1>
+
+<ul>
+<% @games.reverse.each do |game| %>
+  <li>
+  	<% if game.active_game == false %>
+  		第<%= game.id %>局--犧牲品：<%= Drink.find(game.drink_id).name %>
+	  	<br><br>
+	  	勝者：
+	  		<% game.winners.each do |winner| %>
+		  		<%= winner.name + ", " %>
+		  	<% end %>
+	  	<br><br>
+	  	參加的人：
+	  		<% game.joins.each do |user| %>
+		  		<%= user.name + ", " %>
+		  	<% end %>
+	  	<br><br>
+	  	此局開啟時間：<%= game.create_date.strftime("%Y/%m/%d %H:%M:%S") %><br>
+	  	此局結束時間：<%= game.end_date.strftime("%Y/%m/%d %H:%M:%S") %><br>
+  	<% else %>
+  		正在進行.....<%= link_to '參加遊戲', :controller => 'drinks', :action => 'index' %><br><br>
+  		此局開啟時間：<%= game.create_date.strftime("%Y/%m/%d %H:%M:%S") %><br>
+  	<% end %>
+  	<br><br><br>
+  </li>
+<% end %>
+</ul>
